@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 
 const Services = () => {
     return (
@@ -18,50 +18,48 @@ const Services = () => {
   <div className='relative'>
   <p className='text-center text-2xl font-semibold pt-5 md:text-3xl' id='services'>Services</p>
   <div>
-    <img src='/imgs/img8.png' alt='Services' className='absolute w-2/12  top-0 -right-5 md:w-2/12 lg:w-1/12 ' />
+    <img src='/imgs/img8.png' alt='Services' className='absolute w-2/12 top-0 -right-5 md:w-2/12 lg:w-1/12' />
   </div>
 
   <div className='flex flex-col lg:flex-row justify-center xl:w-8/12 xl:mx-auto xl:pb-10'>
-    <div className='w-4/5 md:w-2/5 lg:w-3/12 mx-auto mt-5 bg-[#FEF8F8] h-96 rounded-3xl border-4 border-black  '> 
-          <div className='w-4/5  mx-auto mt-10 bg-[#F196E5] rounded-t-2xl h-36'>
+    <div className='service-card w-4/5 md:w-2/5 lg:w-3/12 mx-auto mt-5 bg-[#FEF8F8] h-96 rounded-3xl border-4 border-black'> 
+          <div className='w-4/5 mx-auto mt-10 bg-[#F196E5] rounded-t-2xl h-36'>
           <img src='/imgs/img20.png' alt='Services' className='w-2/3 mx-auto pt-5 xl:w-32 xl:pt-7' />
           </div>
-          <div className='ml-8 mt-5 '>
+          <div className='ml-8 mt-5'>
                 <h2 className='font-bold lg:-ml-1 xl:text-xl xl:pl-0 xl:pt-0'>Jersey Design</h2>
-                <p className='w-52 text-justify text-sm  lg:ml-1 lg:w-44 '>Stand out with custom jerseys—designed for style, comfort, and just for you. Let’s make your vision a reality!</p>
+                <p className='w-52 text-justify text-sm lg:ml-1 lg:w-44'>Stand out with custom jerseys—designed for style, comfort, and just for you. Let's make your vision a reality!</p>
           </div>
-
     </div>
-    <div className='w-4/5 md:w-2/5 lg:w-3/12 mx-auto mt-5 bg-[#FEF8F8] h-96 rounded-3xl border-4 border-black '> 
+    <div className='service-card w-4/5 md:w-2/5 lg:w-3/12 mx-auto mt-5 bg-[#FEF8F8] h-96 rounded-3xl border-4 border-black'> 
           <div className='w-4/5 mx-auto mt-10 bg-[#F196E5] rounded-t-2xl h-36'>
           <img src='/imgs/img19.png' alt='Services' className='w-2/3 mx-auto pt-3 xl:w-32 xl:pt-7' />
           </div>
           <div className='ml-8 mt-5'>
-            <h2 className='font-bold  lg:-ml-1 xl:text-xl xl:pl-0 xl:pt-0'>Web Development</h2>
-          <p className='w-48 text-justify text-sm  lg:ml-1 lg:w-44'>Get a custom website that’s fast, modern, and tailored to your needs. Let’s bring your ideas to life!</p>
+            <h2 className='font-bold lg:-ml-1 xl:text-xl xl:pl-0 xl:pt-0'>Web Development</h2>
+            <p className='w-48 text-justify text-sm lg:ml-1 lg:w-44'>Get a custom website that's fast, modern, and tailored to your needs. Let's bring your ideas to life!</p>
           </div>
-          
     </div>
-    <div className='w-4/5 md:w-2/5 lg:w-3/12 mx-auto mt-5 bg-[#FEF8F8] h-96 rounded-3xl border-4 border-black '> 
+    <div className='service-card w-4/5 md:w-2/5 lg:w-3/12 mx-auto mt-5 bg-[#FEF8F8] h-96 rounded-3xl border-4 border-black'> 
           <div className='w-4/5 mx-auto mt-10 bg-[#F196E5] rounded-t-2xl h-36'>
-          <img src='/imgs/img18.png' alt='Services' className='w-2/3 mx-auto  xl:w-32 xl:pt-5' />
+          <img src='/imgs/img18.png' alt='Services' className='w-2/3 mx-auto xl:w-32 xl:pt-5' />
           </div>
           <div className='ml-8 mt-5'>
-              <h2 className='font-bold  lg:-ml-1  xl:text-xl xl:pl-0 xl:pt-0'>Web Design</h2>
-              <p className='w-48 text-justify text-sm  lg:ml-1 lg:w-44'>
-              Build a website that’s fast, modern, and uniquely yours. Let’s make it happen!</p>
+              <h2 className='font-bold lg:-ml-1 xl:text-xl xl:pl-0 xl:pt-0'>Web Design</h2>
+              <p className='w-48 text-justify text-sm lg:ml-1 lg:w-44'>
+              Build a website that's fast, modern, and uniquely yours. Let's make it happen!</p>
           </div>
-
     </div>
   </div>
 
-
 </div>
 <div className='flex justify-center'>
-  <button className='bg-[#030F1F] text-white p-3 px-5 mt-5 rounded-3xl'>View Works</button>
+  <Link to="/works">
+    <button className='bg-[#030F1F] text-white p-3 px-5 mt-5 rounded-3xl'>View Works</button>
+  </Link>
 </div>
 <div className='mb-10'>
-  <img src='/imgs/img9.png' alt='Services' className='absolute w-3/12 bottom-3 -left-10 lg:w-1/12 ' />
+  <img src='/imgs/img9.png' alt='Services' className='absolute w-3/12 bottom-3 -left-10 lg:w-1/12' />
 </div>
 </div>
 </div>

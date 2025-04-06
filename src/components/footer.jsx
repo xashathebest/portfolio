@@ -34,7 +34,7 @@ const Footer = () => {
       {/* Bottom Section */}
       <div className="mt-8 border-t border-gray-300 pt-4 text-center">
         <p className="text-xs text-gray-600">
-          &copy; {new Date().getFullYear()} YourCompany. All rights reserved.
+          &copy; {new Date().getFullYear()} Shah Rukh Khan D. Biao. All rights reserved.
         </p>
       </div>
     </footer>

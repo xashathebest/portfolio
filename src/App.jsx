@@ -1,24 +1,37 @@
-import React from 'react'
-import Hero from './components/hero'
-import Nav from './components/Nav'
-import Services from './components/services'
-import Brands from './components/brands'
-import Testimonials from './components/testimonials'
-import Expect from './components/expect'
-import Footer from './components/footer'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Nav from './components/Nav';
+import Hero from './components/hero';
+import Services from './components/services';
+import Expect from './components/expect';
+import Footer from './components/footer';
+import Works from './components/Works';
+import WorkDetail from './components/WorkDetail';
+import Testimonials from './components/testimonials';
+import ScrollToTop from './components/ScrollToTop';
 
-const App = () => {
+function App() {
   return (
-    <main className='relative scroll-smooth bg-[#F196E5] w-screen overflow-x-hidden'>
-    <Nav/>
-    <Hero />
-    <Services/>
-    <Brands/>
-    <Testimonials/>
-    <Expect/>
-    <Footer/>
-    </main>
-  )
+    <Router>
+      <div className="App">
+        <Nav />
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Hero />
+              <Services />
+              <Testimonials />
+              <Expect />
+              <Footer />
+            </>
+          } />
+          <Route path="/works" element={<Works />} />
+          <Route path="/works/:id" element={<WorkDetail />} />
+        </Routes>
+        <ScrollToTop />
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;

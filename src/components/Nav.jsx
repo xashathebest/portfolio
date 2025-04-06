@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import SideNav from "./SideNav";
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -33,6 +35,24 @@ const Navbar = () => {
     };
   }, [lastScrollY]);
 
+  // Reset menu when location changes
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location]);
+
+  // Function to handle navigation to sections on the home page
+  const handleSectionClick = (sectionId) => {
+    // If we're not on the home page, navigate to home first
+    if (location.pathname !== '/') {
+      window.location.href = `/#${sectionId}`;
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <>
       <nav
@@ -43,7 +63,9 @@ const Navbar = () => {
         <div className="pt-4 mx-3 h-full flex justify-between items-center xl:w-4/5 xl:mx-auto 
         md:p-2 md:bg-[#030F1F] lg:bg-[#030F1F] xl:bg-[#030F1F] md:rounded-2xl lg:rounded-2xl xl:p-8 md:pt-10 ">
           <div>
-            <img src="/imgs/img1.png" alt="Logo" className="w-20" />
+            <Link to="/">
+              <img src="/imgs/img1.png" alt="Logo" className="w-20" />
+            </Link>
           </div>
           {/* Hamburger Icon */}
           <div>
@@ -55,26 +77,54 @@ const Navbar = () => {
             />
           </div>
           {/* Desktop Menu */}
-          <div className="text-white gap-5 pr-60 md:pr-16 lg:pr-24 xl:pr-40 hidden md:flex lg:flex xl:flex ">
-            <ul className="flex gap-10">
+          <div className="text-white gap-5 pr-60 md:pr-16 lg:pr-24 xl:pr-40 hidden md:flex lg:flex xl:flex items-center justify-center">
+            <ul className="flex gap-10 ml-24 items-center">
               <li>
-                <a href="#home" className="scroll-smooth">Home</a>
+                <Link to="/" className="hover:text-[#F7CB45] transition-all duration-300">Home</Link>
               </li>
               <li>
-                <a href="#services" className="scroll-smooth">Services</a>
+                <Link to="/works" className="hover:text-[#F7CB45] transition-all duration-300">Works</Link>
               </li>
               <li>
-                <a href="#aboutme" className="scroll-smooth">About Me</a>
+                <a 
+                  href="#services" 
+                  className="hover:text-[#F7CB45] transition-all duration-300"
+                  onClick={(e) => handleSectionClick('services')}
+                >
+                  Services
+                </a>
               </li>
               <li>
-                <a href="#testimonials" className="scroll-smooth">Testimonials</a>
+                <a 
+                  href="#aboutme" 
+                  className="hover:text-[#F7CB45] transition-all duration-300"
+                  onClick={(e) => handleSectionClick('aboutme')}
+                >
+                  About Me
+                </a>
               </li>
               <li>
-                <a href="/imgs/img25.pdf" className="scroll-smooth">Resume</a>  
+                <a 
+                  href="#testimonials" 
+                  className="hover:text-[#F7CB45] transition-all duration-300"
+                  onClick={(e) => handleSectionClick('testimonials')}
+                >
+                  Testimonials
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/imgs/img25.pdf" 
+                  className="hover:text-[#F7CB45] transition-all duration-300" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Resume
+                </a>
               </li>
             </ul>
           </div>
-          <button className="bg-white text-[#030F1F] p-3 px-5 rounded-3xl hidden md:block lg:block xl:block">
+          <button className="bg-white text-[#030F1F] p-3 px-5 rounded-3xl hidden md:block lg:block xl:block hover:bg-[#F7CB45] transition-all duration-300">
             Contact
           </button>
         </div>
