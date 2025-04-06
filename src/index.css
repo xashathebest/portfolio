@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-sans scroll-smooth;
+}
+
+
+@layer utilities {
+    .width-max {
+        @apply relative min-h-screen w-screen overflow-x-hidden
+    }
+    .container {
+        @apply w-4/5 mx-auto p-5
+       
+    }
+    .btn {
+      @apply inline-block border-2 border-black cursor-pointer bg-none font-semibold no-underline tracking-tighter py-2 px-4 text-white bg-[#F7CB45] rounded-lg /*shadow-[0_10px_20px_rgba(247,_203,_69,_0.5),_0_6px_6px_rgba(247,_203,_69,_0.5),_0_0_100px_-10px_#F7CB45] transition-transform duration-300 ease-in-out*/;
+    }
+    
+    .btn:hover {
+       @apply transform -translate-y-2 /*shadow-[0_14px_28px_rgba(247,_203,_69,_0.25),_0_10px_10px_rgba(247,_203,_69,_0.22),_0_0_120px_-10px_#F7CB45]; */
+    }
+    
+    .text-hover {
+      @apply hover:text-[#F7CB45];
+    }
+
+    .btn1 {
+      @apply inline-block border-2 border-black cursor-pointer bg-none font-semibold no-underline tracking-tighter py-2 px-4 text-black bg-white rounded-lg /*shadow-[0_10px_20px_rgba(247,_203,_69,_0.5),_0_6px_6px_rgba(247,_203,_69,_0.5),_0_0_100px_-10px_#F7CB45] transition-transform duration-300 ease-in-out*/;
+    }
+    
+    .btn1:hover {
+      @apply transform -translate-y-2 /*shadow-[0_14px_28px_rgba(247,_203,_69,_0.25),_0_10px_10px_rgba(247,_203,_69,_0.22),_0_0_120px_-10px_#F7CB45]; */;
+    }
+    
+    .text-hover {
+      @apply hover:text-black;
+    }
+    .testimonials-carousel {
+      @apply flex transition-transform duration-500 ease-in-out;
+    }
+    
+    .testimonial-item {
+      @apply flex-shrink-0 w-full text-center;
+    }
+    
+    
+}
+
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .img-bounce {
+    animation: bounce 2s infinite ease-in-out;
+  }
+
+  
+
+
+
+@layer components {
+    .logos {
+      @apply flex justify-center items-center overflow-hidden;
+    }
+    .logos-slide {
+      @apply flex items-center gap-5; /* gap-5 equals 20px in Tailwind */
+      animation: slide 15s linear infinite;
+    }
+    .logos-slide img {
+      @apply h-12 mx-5; /* h-12 equals 50px height, mx-5 sets 20px horizontal margin */
+    }
+  }
+  
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
