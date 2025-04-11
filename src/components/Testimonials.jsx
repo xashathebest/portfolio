@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ScrollAnimation from './ScrollAnimation';
 
 const Testimonials = () => {
     const testimonials = [
@@ -79,6 +80,7 @@ const Testimonials = () => {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Future of Design Services section */}
+                <ScrollAnimation delay={100}>
                 <div className="flex flex-col md:flex-row items-center mb-16">
                     <img 
                         src="/imgs/img10.png" 
@@ -87,7 +89,7 @@ const Testimonials = () => {
                     />
 
                     <div className="flex flex-col md:ml-8">
-                        <h2 className="text-2xl md:text-4xl xl:text-5xl font-bold leading-tight text-center md:text-left">
+                        <h2 className="text-2xl md:text-4xl xl:text-5xl font-['Stinger-Fit-Regular'] leading-tight text-center md:text-left">
                             THE FUTURE OF<br />
                             <span className="text-[#030F1F]">DESIGN SERVICES</span>
                         </h2>
@@ -96,15 +98,17 @@ const Testimonials = () => {
                         </p>
                     </div>
                 </div>
+                </ScrollAnimation>
 
                 {/* Testimonials section */}
+                <ScrollAnimation delay={200}>
                 <div className="mt-8">
-                    <h2 className="text-center mb-8 font-bold text-2xl md:text-3xl">
+                    <h2 className="text-center mb-8 font-['Stinger-Fit-Regular'] text-2xl md:text-3xl">
                         What Clients Say
                     </h2>
                     
                     <div className="flex justify-center mb-8">
-                        <div className={`w-full max-w-3xl rounded-xl bg-[#FEF8F8] border-4 border-black p-6 md:p-8 transition-all duration-500 ${isAnimating ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
+                        <div className={`w-full max-w-3xl rounded-xl bg-[#FEF8F8] border-4 border-black p-6 md:p-8 transition-all duration-700 ${isAnimating ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
                             <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
                                 <div className="flex flex-col items-center md:items-start">
                                     <img
@@ -171,6 +175,7 @@ const Testimonials = () => {
                         </button>
                     </div>
                 </div>
+                </ScrollAnimation>
             </div>
         </div>
     );

@@ -9,6 +9,7 @@ import Works from './components/Works';
 import WorkDetail from './components/WorkDetail';
 import Testimonials from './components/testimonials';
 import ScrollToTop from './components/ScrollToTop';
+import AIAssistant from './components/AIAssistant';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/works/:id" element={<WorkDetail />} />
         </Routes>
         <ScrollToTop />
+        <AIAssistant />
       </div>
     </Router>
   );

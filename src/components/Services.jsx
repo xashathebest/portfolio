@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 
 const Services = () => {
+    const [resumeNotification, setResumeNotification] = useState('');
+
+    const handleResumeClick = () => {
+        setResumeNotification('Mock notification: Resume download initiated.');
+        setTimeout(() => setResumeNotification(''), 5000); // Clear notification after 5 seconds
+    };
+
     return (
 <div className='relative'>
 <div className='bg-[#F7CB45] width-max absolute top-0 left-0 z-10 -mt-28'>
@@ -57,7 +64,18 @@ const Services = () => {
   <Link to="/works">
     <button className='bg-[#030F1F] text-white p-3 px-5 mt-5 rounded-3xl'>View Works</button>
   </Link>
+  <button 
+    className='bg-[#F196E5] text-black p-3 px-5 mt-5 ml-3 rounded-3xl' 
+    onClick={handleResumeClick}
+  >
+    Resume
+  </button>
 </div>
+{resumeNotification && (
+  <div className='fixed bottom-5 right-5 bg-green-500 text-white p-3 rounded-lg shadow-lg'>
+    {resumeNotification}
+  </div>
+)}
 <div className='mb-10'>
   <img src='/imgs/img9.png' alt='Services' className='absolute w-3/12 bottom-3 -left-10 lg:w-1/12' />
 </div>

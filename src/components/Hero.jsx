@@ -8,8 +8,9 @@ const hero = () => {
             <div className='xl:ml-28 mt-16'>
                <ScrollAnimation delay={100}>
                <div> 
-              <h2 className='text-center text-4xl pt-9 md:text-5xl xl:pt-20 xl:text-6xl' style={{ fontFamily: "'PT Serif Caption', serif" }}>
-                Tailored for You</h2>
+              <h2 className='text-center text-4xl pt-9 md:text-5xl xl:pt-20 xl:text-6xl  font-["Stinger-Fit-Regular"]'>
+                Tailored for You
+              </h2>
               <p className='text-xs text-center pt-4 md:text-lg md:leading-tight xl:text-xl'>Affordable, custom web design that elevates<br/>
               your brand and engages your audience.</p>
             </div>
@@ -29,8 +30,8 @@ const hero = () => {
             </div>
             <div className=''>
             <ScrollAnimation delay={200}>
-            <div className='flex justify-center pt-10 pr-4'>
-              <img src="/imgs/img3.png" alt="Hero" className='w-10/12 z-10 mt-8 md:w-6/12 xl:w-[500px]' />
+            <div className='flex justify-center pt-10'>
+              <img src="/imgs/img3.png" alt="Hero" className='w-10/12 z-10 mt-8 md:w-6/12 xl:w-[500px] xl:ml-0' />
             </div>
             </ScrollAnimation>
             <div>
@@ -39,14 +40,11 @@ const hero = () => {
             <div>
               <img src="/imgs/img5.png" alt="Hero" className='absolute top-52 -right-5 w-16 md:w-20 xl:top-24 xl:right-48 xl:w-24' />
             </div> 
-            <div>
-             <img src="/imgs/img6.png" alt="Hero" className='fixed top-[450px] w-40 right-48 z-20 hidden xl:block' />
-            </div>
             </div>
         </div>
         <ScrollAnimation delay={400}>
-        <div className="flex bg-[#F196E5] justify-center text-center z-20 py-8 h-40 md:h-20 lg:h-48">
-          <div className="w-full max-w-6xl -mt-10">
+        <div className="relative z-50 bg-[#F196E5] py-8">
+          <div className="w-full max-w-4xl mx-auto">
             {/* Numbers Section */}
             <ul className="flex justify-center gap-12 text-sm md:text-2xl xl:text-2xl text-white">
               <li>458K+</li>
